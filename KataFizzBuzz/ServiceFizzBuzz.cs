@@ -13,14 +13,24 @@ namespace KataFizzBuzz
 
 		public static string Print(int number)
 		{
-			if (number % 3 == 0 && number % 5 == 0)
+			if (IsBuzz(number) && IsFizz(number))
 				return FizzBuzz;
-			if (number % 3 == 0)
+			if (IsFizz(number))
 				return Fizz;
-			if (number % 5 == 0)
+			if (IsBuzz(number))
 				return Buzz;
 
 			return number.ToString();
+		}
+
+		private static bool IsFizz(int number)
+		{
+			return number % 3 == 0;
+		}
+
+		private static bool IsBuzz(int number)
+		{
+			return number % 5 == 0;
 		}
 	}
 }
